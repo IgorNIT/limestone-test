@@ -12,7 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('src/js/main.js', 'build/js')
-    .sass('src/scss/main.scss', 'build/css')
+    .sass('src/scss/header.scss', 'build/css')
+    .sass('src/scss/footer.scss', 'build/css')
+    .sass('src/scss/front-page.scss', 'build/css')
     .options({
         postCss: [
             require("css-mqpacker")

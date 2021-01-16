@@ -19,6 +19,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "beefup": "^1.2.1",
         "css-mqpacker": "^7.0.0"
     }
 }

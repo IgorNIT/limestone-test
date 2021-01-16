@@ -1,4 +1,6 @@
 {
     "/build/js/main.js": "/build/js/main.js",
-    "/build/css/main.css": "/build/css/main.css"
+    "/build/css/header.css": "/build/css/header.css",
+    "/build/css/footer.css": "/build/css/footer.css",
+    "/build/css/front-page.css": "/build/css/front-page.css"
 }
