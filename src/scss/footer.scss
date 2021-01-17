@@ -73,7 +73,7 @@
     a {
       @media (min-width: $screen-md) {
         font-family: $font-montserrat;
-        font-weight: 700;
+        font-weight: 300;
         font-size: 11px;
         line-height: 16px;
         color: $white;
@@ -125,8 +125,15 @@
     order: 0;
   }
 
-  li:not(:last-child) {
-    border-right: 1px solid $white;
+  li:not(:first-child) {
+    border-left: 1px solid $white;
+  }
+
+  li:first-child {
+    @media (min-width: $screen-md) {
+      border-left: 1px solid $white;
+    }
+
   }
 
   a {

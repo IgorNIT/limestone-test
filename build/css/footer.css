@@ -78,8 +78,8 @@
   line-height: 16px;
 }
 
-.terms-menu li:not(:last-child) {
-  border-right: 1px solid white;
+.terms-menu li:not(:first-child) {
+  border-left: 1px solid white;
 }
 
 .terms-menu a {
@@ -111,7 +111,7 @@
   }
   .footer-menu > .menu-item ~ .menu-item a {
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 300;
     font-size: 11px;
     line-height: 16px;
     color: white;
@@ -123,6 +123,9 @@
   .terms-menu {
     width: auto;
     order: 0;
+  }
+  .terms-menu li:first-child {
+    border-left: 1px solid white;
   }
 }
 
