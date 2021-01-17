@@ -24,23 +24,27 @@
 <div id="page" class="site">
     <header class="site-header">
         <div class="site-header__container">
-            <button id="menu-toggle" class="menu-hamburger hamburger hamburger--squeeze" type="button">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
-                </span>
-            </button>
-            <div id="site-navigation" class="main-navigation">
-                <nav class="header-nav">
-                    <?php wp_nav_menu(
-                        array(
-                            'theme_location' => 'main-menu',
-                            'container' => false,
-                            'menu_id' => 'main-menu-desktop',
-                            'menu_class' => 'nav-main-desktop'
-                        )
-                    );
-                    ?>
-                </nav>
-            </div
+            <div class="site-header__row">
+                <button id="menu-toggle" class="menu-hamburger hamburger hamburger--squeeze" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+                <div id="main-navigation" class="main-navigation">
+                    <nav>
+                        <?php wp_nav_menu(
+                            array(
+                                'theme_location' => 'main-menu',
+                                'container'      => false,
+                                'menu_id'        => 'main-menu',
+                                'menu_class'     => 'main-menu',
+                                'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+                                'walker'         => new WP_Bootstrap_Navwalker(),
+                            )
+                        );
+                        ?>
+                    </nav>
+                </div
+            </div>
         </div>
     </header><!-- #masthead -->

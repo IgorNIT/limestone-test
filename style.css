@@ -27,6 +27,11 @@ Use it to make something cool, have fun, and share what you've learned.
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 /* Sections

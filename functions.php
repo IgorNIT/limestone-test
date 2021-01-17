@@ -68,6 +68,10 @@ add_action( 'after_setup_theme', 'limestone_setup' );
  */
 function limestone_scripts() {
 
+    // --- Fonts ---
+
+    wp_enqueue_style( 'limestone-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300', false );
+
     //--- CSS  ---
 
     // Style.css
@@ -99,6 +103,16 @@ function limestone_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'limestone_scripts' );
 
+/**
+ *  Google fonts (Open-Sans and Montserrat)
+ */
+function limestone_include_google_fonts()
+{
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com">';
+    echo '<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">';
+}
+
+add_action('wp_head', 'limestone_include_google_fonts');
 /**
  * Bootstrap nav walker
  */
