@@ -1,1 +1,141 @@
 @import './src/scss/components/variables';
+
+.site-footer {
+  background-color: $primary-color;
+  padding: 29px 0;
+
+  &__container {
+    width: 100%;
+    max-width: $screen-xl;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+    }
+
+  }
+}
+
+
+.footer-navigation {
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Footer menu*/
+
+.footer-menu {
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $screen-md) {
+    margin-right: 58px;
+  }
+
+  &>.menu-item:first-of-type {
+    display: block;
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+     text-align: left;
+    }
+
+    a {
+      font-family: $font-montserrat;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 15px 0;
+      display: inline-block;
+    }
+  }
+
+  &> .menu-item ~ .menu-item {
+    display: none;
+
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+
+    a {
+      @media (min-width: $screen-md) {
+        font-family: $font-montserrat;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 16px;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Social list*/
+.socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+
+  @media (min-width: $screen-md) {
+    margin-left: auto;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0 8px;
+  }
+
+  svg {
+    fill: $white;
+  }
+
+}
+
+/* Terms menu*/
+.terms-menu {
+  order: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  line-height: 16px;
+
+  @media (min-width: $screen-md) {
+    width: auto;
+    order: 0;
+  }
+
+  li:not(:last-child) {
+    border-right: 1px solid $white;
+  }
+
+  a {
+    color: $white;
+    font-family: $font-open-sans;
+    font-size: 10px;
+    line-height: 16px;
+    text-decoration: none;
+    padding: 0 10px;
+    display: inline-block;
+  }
+}

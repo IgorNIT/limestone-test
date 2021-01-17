@@ -1,0 +1,128 @@
+.site-footer {
+  background-color: #00BAC6;
+  padding: 29px 0;
+}
+
+.site-footer__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.site-footer__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer menu*/
+
+.footer-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-menu > .menu-item:first-of-type {
+  display: block;
+  text-align: center;
+}
+
+.footer-menu > .menu-item:first-of-type a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 0;
+  display: inline-block;
+}
+
+.footer-menu > .menu-item ~ .menu-item {
+  display: none;
+}
+
+/* Social list*/
+
+.socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socials-list a {
+  display: inline-block;
+  padding: 0 8px;
+}
+
+.socials-list svg {
+  fill: white;
+}
+
+/* Terms menu*/
+
+.terms-menu {
+  order: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  line-height: 16px;
+}
+
+.terms-menu li:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.terms-menu a {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+  line-height: 16px;
+  text-decoration: none;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .site-footer__row {
+    flex-direction: row;
+  }
+  .footer-navigation {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer-menu {
+    margin-right: 58px;
+  }
+  .footer-menu > .menu-item:first-of-type {
+    text-align: left;
+  }
+  .footer-menu > .menu-item ~ .menu-item {
+    display: block;
+  }
+  .footer-menu > .menu-item ~ .menu-item a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 16px;
+    color: white;
+    text-decoration: none;
+  }
+  .socials-list {
+    margin-left: auto;
+  }
+  .terms-menu {
+    width: auto;
+    order: 0;
+  }
+}
+
