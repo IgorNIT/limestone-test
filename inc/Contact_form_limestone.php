@@ -57,6 +57,14 @@ Class Contact_form_limestone
     private function ajax_success_message()
     {
         $out = '';
+        $out .= '<div class="success-message">';
+        $out .= '<div class="success-message__icon">';
+        $out .=  '<img src="' . get_template_directory_uri() . '/build/images/nthumbs-up.jpg">';
+        $out .= '</div>';
+        $out .= '<div class="success-message__title"> ' . __('Success!', 'limestone') . '</div>';
+        $out .= '</div>';
+
+        return $out;
 
     }
 

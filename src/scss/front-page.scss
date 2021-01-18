@@ -307,3 +307,24 @@
     text-align: center;
   }
 }
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 146px 15px;
+
+  &__icon {
+    width: 85px;
+  }
+
+  &__title {
+    font-family: $font-montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 55px;
+    line-height: 49px;
+    color: #85AD5B;
+  }
+}

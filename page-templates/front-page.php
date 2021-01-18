@@ -78,6 +78,8 @@ get_header();
             </div>
         </aside>
     </main><!-- #main -->
+
+
 <?php
 get_sidebar();
 get_footer();

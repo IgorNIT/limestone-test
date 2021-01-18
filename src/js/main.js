@@ -20,16 +20,9 @@ jQuery(document).ready(function ($) {
 
 
     const contactFrom = $('.limestone-contact-form');
-    let sendData = false;
 
     contactFrom.on('submit', function (e) {
         e.preventDefault();
-
-        if (sendData) {
-            return false;
-        }
-        sendData = true;
-
 
         contactFrom.addClass('disabled');
 
@@ -54,6 +47,8 @@ jQuery(document).ready(function ($) {
             data : data,
             action :  'contact_form'
         };
+
+        console.log(data);
 
         send_data(obj);
     });
