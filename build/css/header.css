@@ -73,14 +73,6 @@
   outline: none;
 }
 
-.hamburger:hover {
-  opacity: 0.7;
-}
-
-.hamburger.is-active:hover {
-  opacity: 0.7;
-}
-
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
@@ -169,6 +161,9 @@
   }
   .main-menu .nav-item {
     border-bottom: none;
+  }
+  .main-menu .nav-link {
+    padding: 15px 25px;
   }
   .hamburger {
     display: none;

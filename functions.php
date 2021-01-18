@@ -13,13 +13,13 @@ if ( ! defined( 'THEME_VERSION' ) ) {
 }
 
 
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
 function limestone_setup() {
     /*
      * Make theme available for translation.
@@ -85,7 +85,7 @@ function limestone_scripts() {
     // --- JS  ---
 
     // Main JS
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/build/js/main.js', array('jquery'), THEME_VERSION, true );
+    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/build/js/main.js', array('jquery'), THEME_VERSION, true );
 
 
 
@@ -114,4 +114,9 @@ add_action('wp_head', 'limestone_include_google_fonts');
 /**
  * Bootstrap nav walker
  */
-require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+/**
+ * Contact form
+ */
+require_once get_template_directory() . '/inc/Contact_form_limestone.php';

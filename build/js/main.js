@@ -105,6 +105,94 @@ jQuery(document).ready(function ($) {
     });
     $('body').toggleClass('menu-open');
   });
+  /*=============  Submit form =====================*/
+
+  var contactFrom = $('.limestone-contact-form');
+  var sendData = false;
+  contactFrom.on('submit', function (e) {
+    e.preventDefault();
+
+    if (sendData) {
+      return false;
+    }
+
+    sendData = true;
+    contactFrom.addClass('disabled');
+    var data = [];
+    contactFrom.find('input').each(function () {
+      var val = validate_input.call($(this));
+      data.push(val);
+    }); // if not valid form
+
+    if (data.includes(false)) {
+      contactFrom.removeClass('disabled');
+      return false;
+    }
+
+    var obj = {
+      nonce_code: contactForm.nonce,
+      data: data,
+      action: 'contact_form'
+    };
+    send_data(obj);
+  });
+
+  function send_data(obj) {
+    $.ajax({
+      type: 'POST',
+      url: contactForm.url,
+      data: obj,
+      success: function success(response) {
+        contactFrom.removeClass('disabled');
+        var data = JSON.parse(response);
+
+        if (data.status === 'success') {
+          $('.contact-form__inner').html(data.html);
+        }
+
+        if (data.status === 'error') {
+          $('.contact-form__response').html(data.html);
+        }
+      }
+    });
+  } // Validation
+
+
+  function validate_input() {
+    var valid;
+    var val;
+    var type = $(this).attr('type');
+    var id = $(this).attr('id');
+
+    if (type === 'text' || type === 'number') {
+      val = $(this).val();
+
+      if (val.length >= 3) {
+        valid = true;
+      }
+    }
+
+    if (type === 'email') {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      val = $(this).val();
+
+      if (re.test(val)) {
+        valid = true;
+      }
+    } // Add error class to required fields
+
+
+    if (!valid) {
+      $(this).parent().addClass('error');
+      return false;
+    }
+
+    $(this).parent().removeClass('error');
+    return {
+      'name': id,
+      'value': val
+    };
+  }
 });
 
 /***/ }),

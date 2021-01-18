@@ -2,7 +2,11 @@
 
 .site-footer {
   background-color: $primary-color;
-  padding: 29px 0;
+  padding: 53px 0;
+
+  @media (min-width: $screen-md) {
+    padding: 70px 0;
+  }
 
   &__container {
     width: 100%;
@@ -13,6 +17,7 @@
 
   &__row {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 
@@ -28,6 +33,7 @@
   @media (min-width: $screen-md) {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 6%;
   }
 }
 
@@ -58,7 +64,7 @@
       color: $white;
       text-decoration: none;
       text-transform: uppercase;
-      padding: 15px 0;
+      padding: 8px 0 0 0;
       display: inline-block;
     }
   }
@@ -89,17 +95,19 @@
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  margin: 0;
+  margin: 26px 0 0 0;
   padding: 0;
 
 
   @media (min-width: $screen-md) {
-    margin-left: auto;
+    margin: 11px 5% 0 auto;
+    align-self: flex-start;
+
   }
 
   a {
     display: inline-block;
-    padding: 0 8px;
+    padding: 0 11px;
   }
 
   svg {
@@ -112,7 +120,7 @@
 .terms-menu {
   order: 1;
   list-style: none;
-  margin: 0;
+  margin: 33px 14px 0 0;
   padding: 0;
   display: flex;
   width: 100%;
@@ -123,6 +131,7 @@
   @media (min-width: $screen-md) {
     width: auto;
     order: 0;
+    margin: 64px 14px 0 10%;
   }
 
   li:not(:first-child) {
@@ -144,5 +153,9 @@
     text-decoration: none;
     padding: 0 10px;
     display: inline-block;
+
+    @media (min-width: $screen-md) {
+      padding: 0 12px;
+    }
   }
 }
